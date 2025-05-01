@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using WpfApp1.DataBase;
 namespace WpfApp1;
 
+
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>

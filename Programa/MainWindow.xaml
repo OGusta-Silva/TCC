@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="White">
@@ -13,9 +15,19 @@
         </Grid.ColumnDefinitions>
         <Label Content="Usuário" HorizontalAlignment="Left" Margin="314,139,0,0" VerticalAlignment="Top" Width="159" Foreground="Black"/>
         <Label Content="Senha" HorizontalAlignment="Left" Margin="314,211,0,0" VerticalAlignment="Top" Width="159"/>
-        <Button Content="Entrar" HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
+        <Button x:Name="btnEntrar" Content="Entrar" HorizontalAlignment="Left" Margin="320,286,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click" Height="24"/>
         <PasswordBox HorizontalAlignment="Left" Margin="320,237,0,0" VerticalAlignment="Top" Width="153" Background="White" SelectionBrush="#FF4096DA" Foreground="Black"/>
         <TextBox HorizontalAlignment="Left" Margin="320,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
+        <Button x:Name="btnSair" Content="Sair" HorizontalAlignment="Left" Margin="412,285,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click" RenderTransformOrigin="0.5,0.5" Height="25">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.262"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
 
     </Grid>
 </Window>
