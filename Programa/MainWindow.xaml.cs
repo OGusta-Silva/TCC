@@ -20,21 +20,27 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+
+        Loaded += MainWindow_Loaded;
+    }
+
+    private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        try
+        string usuario  = txtusuario.Text;
+        string senha = password.Password.ToString();
+
+        if (Usuario.Login(usuario, senha))
         {
-            var conexao = new conexao();
+            MessageBox.Show("Login Ok");
         }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.Message);
+        else {
+            MessageBox.Show("Login Incorreto");
         }
-        
-        Home home = new Home();
-        home.Show();
-        this.Close();
-    }
-}
+
+
+} }

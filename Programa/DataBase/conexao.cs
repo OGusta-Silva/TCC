@@ -32,5 +32,10 @@ namespace WpfApp1.DataBase
         {
             connection.Close();
         }
+
+        internal object Query()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
