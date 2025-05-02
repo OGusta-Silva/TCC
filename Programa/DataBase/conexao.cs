@@ -30,12 +30,15 @@ namespace WpfApp1.DataBase
         }
         public void Close()
         {
-            connection.Close();
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
         }
-
-        internal object Query()
+        internal MySqlCommand Query()
         {
-            throw new NotImplementedException();
+            if (connection.State != System.Data.ConnectionState.Open)
+                connection.Open();
+
+            return connection.CreateCommand();
         }
     }
 }
