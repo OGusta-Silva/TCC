@@ -9,6 +9,6 @@ namespace WpfApp1
 {
     internal abstract class AbstracDAO<T>
     {
-        protected conexao conn = new conexao();
+        protected Conexao conn = new Conexao();
     }
 }

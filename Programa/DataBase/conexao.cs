@@ -7,38 +7,40 @@ using MySql.Data.MySqlClient;
 
 namespace WpfApp1.DataBase
 {
-    internal class conexao
+  internal class Conexao
+  {
+    private static readonly string host = "localhost";
+    private static readonly string port = "3306";
+    private static readonly string user = "root";
+    private static readonly string password = "MySql2019!";
+    private static readonly string dbname = "BancoDados";
+    private static MySqlConnection connection;
+
+
+    public Conexao()
     {
-        private static string host = "localhost";
-        private static string port = "3306";
-        private static string user = "root";
-        private static string password = "MySql2019!";
-        private static string dbname = "BancoDados";
-        private static MySqlConnection connection;
-        private static MySqlCommand command;
-
-        public conexao()
-        {
-            try
-            {
-                connection = new MySqlConnection($"server={host};user={user};database={dbname};port={port};password={password}");
-
-            }catch (Exception)
-            {
-                throw;
-            }
-        }
-        public void Close()
-        {
-            if (connection.State == System.Data.ConnectionState.Open)
-                connection.Close();
-        }
-        internal MySqlCommand Query()
-        {
-            if (connection.State != System.Data.ConnectionState.Open)
-                connection.Open();
-
-            return connection.CreateCommand();
-        }
+      try
+      {
+        connection = new MySqlConnection($"server={host};user={user};database={dbname};port={port};password={password}");
+      }
+      catch (Exception)
+      {
+        throw;
+      }
     }
+
+    public static void Close()
+    {
+      if (connection.State == System.Data.ConnectionState.Open)
+        connection.Close();
+    }
+
+    internal static MySqlCommand Query()
+    {
+      if (connection.State != System.Data.ConnectionState.Open)
+        connection.Open();
+
+      return connection.CreateCommand();
+    }
+  }
 }
