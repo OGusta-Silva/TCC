@@ -5,12 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Home" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Home" Height="500" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Hi" HorizontalAlignment="Left" Margin="340,192,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.ColumnSpan="2"/>
+
+        <StackPanel Grid.Column="0" Margin="5 0 5">
+            <Label Grid.Column="0" Content="Nome" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Content="Placa" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Content="Nome" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Content="Data" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Content="Velocidade" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Content="Limite Velocidade" HorizontalAlignment="Right"/>
+           
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Margin =" 2 5 2 5">
+            <TextBlock />
+
+        </StackPanel>
+        
+        
     </Grid>
 </Window>

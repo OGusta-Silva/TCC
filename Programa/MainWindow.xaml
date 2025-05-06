@@ -13,12 +13,12 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Usuário" HorizontalAlignment="Left" Margin="314,139,0,0" VerticalAlignment="Top" Width="159" Foreground="Black"/>
-        <Label Content="Senha" HorizontalAlignment="Left" Margin="314,211,0,0" VerticalAlignment="Top" Width="159"/>
-        <Button x:Name="btnEntrar" Content="Entrar" HorizontalAlignment="Left" Margin="319,285,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click" Height="24" TabIndex="2"/>
-        <PasswordBox x:Name="password" HorizontalAlignment="Left" Margin="320,237,0,0" VerticalAlignment="Top" Width="153" Background="White" SelectionBrush="#FF4096DA" Foreground="Black" TabIndex="1"/>
-        <TextBox x:Name="txtusuario" HorizontalAlignment="Left" Margin="320,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" SnapsToDevicePixels="True" TabIndex="0"/>
-        <Button x:Name="btnSair" Content="Sair" HorizontalAlignment="Left" Margin="412,285,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click" RenderTransformOrigin="0.5,0.5" Height="25" TabIndex="3">
+        <Label Content="Usuário" HorizontalAlignment="Left" Margin="314,146,0,0" VerticalAlignment="Top" Width="159" Foreground="Black"/>
+        <Label Content="Senha" HorizontalAlignment="Left" Margin="314,220,0,0" VerticalAlignment="Top" Width="159"/>
+        <Button x:Name="btnEntrar" Content="Entrar" Margin="319,285,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="24" TabIndex="2" Background="#FF1F5C91" BorderBrush="#FFDCE7F0" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Padding="16,4,16,5"/>
+        <PasswordBox x:Name="password" HorizontalAlignment="Left" Margin="320,237,0,0" VerticalAlignment="Top" Width="153" Background="White" SelectionBrush="#FF4096DA" Foreground="Black" TabIndex="1" CaretBrush="#FF1F5C91"/>
+        <TextBox x:Name="txtusuario" HorizontalAlignment="Left" Margin="320,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" SnapsToDevicePixels="True" TabIndex="0" CaretBrush="#FF1F5C91"/>
+        <Button x:Name="btnSair" Content="Sair" HorizontalAlignment="Left" Margin="412,285,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click" RenderTransformOrigin="0.5,0.5" Height="25" TabIndex="3" Background="#FF1F5C91" BorderBrush="#FFDCE7F0" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
