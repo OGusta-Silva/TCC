@@ -38,7 +38,9 @@ public partial class MainWindow : Window
 
     if (Usuario.Login(usuario, senha))
     {
-      //abrir pagina
+      var home = new Home();
+      home.Show();
+      this.Close();
     }
     else
     {

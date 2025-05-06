@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="340,192,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Hi" HorizontalAlignment="Left" Margin="340,192,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
