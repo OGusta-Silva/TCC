@@ -12,7 +12,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Margin="5 0 5">
+        <StackPanel Grid.Column="0" Margin="5 5">
             <Label Grid.Column="0" Content="Nome" HorizontalAlignment="Right"/>
             <Label Grid.Column="0" Content="Placa" HorizontalAlignment="Right"/>
             <Label Grid.Column="0" Content="Nome" HorizontalAlignment="Right"/>
