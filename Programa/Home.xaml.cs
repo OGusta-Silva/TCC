@@ -29,5 +29,26 @@ namespace WpfApp1
             MessageBox.Show("teste");
             MessageBox.Show("teste 2");
         }
+
+    private void BtnSalvar_Click(object sender, RoutedEventArgs e)
+    {
+      String nome, placa, numeroRastreador, data, velocidade, limiteVelocidade;
+      nome = txtBoxNome.Text;
+      placa = txtBoxPlaca.Text;
+      numeroRastreador = txtBoxnumero.Text;
+      data = txtBoxData.Text;
+      velocidade = txtBoxVelocidade.Text;
+      limiteVelocidade = txtBoxLimiteVelocidade.Text;
+
+
+      txtBoxNome.Text ="";
+      txtBoxPlaca.Text = "";
+      txtBoxnumero.Text = "";
+      txtBoxData.Text = "";
+      txtBoxVelocidade.Text = "";
+      txtBoxLimiteVelocidade.Text = "";
+
+
     }
+  }
 }
