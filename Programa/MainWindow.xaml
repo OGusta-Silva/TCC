@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Login" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,7 +18,7 @@
         <Button x:Name="btnEntrar" Content="Entrar" Margin="319,285,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="24" TabIndex="2" Background="#FF1F5C91" BorderBrush="#FFDCE7F0" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Padding="16,4,16,5" Foreground="White"/>
         <PasswordBox x:Name="password" HorizontalAlignment="Left" Margin="320,237,0,0" VerticalAlignment="Top" Width="153" Background="White" SelectionBrush="#FF4096DA" Foreground="Black" TabIndex="1" CaretBrush="#FF1F5C91"/>
         <TextBox x:Name="txtusuario" HorizontalAlignment="Left" Margin="320,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" SnapsToDevicePixels="True" TabIndex="0" CaretBrush="#FF1F5C91"/>
-        <Button x:Name="btnSair" Content="Sair" HorizontalAlignment="Left" Margin="412,285,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click" RenderTransformOrigin="0.5,0.5" Height="25" TabIndex="3" Background="#FF1F5C91" BorderBrush="#FFDCE7F0" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="White">
+        <Button x:Name="btnSair" Content="Sair" HorizontalAlignment="Left" Margin="412,285,0,0" VerticalAlignment="Top" Width="72" Click="Button_ClickSair" RenderTransformOrigin="0.5,0.5" Height="25" TabIndex="3" Background="#FF1F5C91" BorderBrush="#FFDCE7F0" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="White">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

@@ -26,8 +26,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("teste");
-            MessageBox.Show("teste 2");
+         
         }
 
     private void BtnSalvar_Click(object sender, RoutedEventArgs e)
@@ -40,6 +39,7 @@ namespace WpfApp1
       velocidade = txtBoxVelocidade.Text;
       limiteVelocidade = txtBoxLimiteVelocidade.Text;
 
+      MessageBox.Show("Infração Cadastrada!");
 
       txtBoxNome.Text ="";
       txtBoxPlaca.Text = "";

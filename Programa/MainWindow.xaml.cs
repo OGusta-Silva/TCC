@@ -46,5 +46,8 @@ public partial class MainWindow : Window
     {
       MessageBox.Show("Login Incorreto");
     }
-  }
 }
+  private void Button_ClickSair(object sender, RoutedEventArgs e) { 
+    this.Close();
+  }
+  }
