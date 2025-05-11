@@ -39,7 +39,7 @@ namespace WpfApp1
       velocidade = txtBoxVelocidade.Text;
       limiteVelocidade = txtBoxLimiteVelocidade.Text;
 
-      MessageBox.Show("Infração Cadastrada!");
+      MessageBox.Show("Cadastro Realizado!");
 
       txtBoxNome.Text ="";
       txtBoxPlaca.Text = "";
@@ -50,5 +50,14 @@ namespace WpfApp1
 
 
     }
+
+    private void MnuSair_Click(object sender, RoutedEventArgs e)
+    {
+      MessageBoxResult result = MessageBox.Show("Deseja realmente sair da aplicação?", "Sistema de Cadastro Infração",MessageBoxButton.YesNo, MessageBoxImage.Question);
+      if (result == MessageBoxResult.Yes) {
+      this.Close();
+         
+      }        
+      }
   }
 }
