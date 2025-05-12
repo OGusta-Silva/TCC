@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp1.Interface;
 using WpfApp1.DataBase;
+using MySql.Data.MySqlClient;
 
 
 
@@ -34,17 +35,31 @@ namespace WpfApp1.Models
     {
       try
       {
+        MySqlCommand cmd = conn.Query();
+        cmd.CommandText = @"
+                    INSERT INTO INFRACAO 
+                    (NOME_MOTORISTA, PLACA_VEICULO, NUMERO_RASTREADOR, DATA, VELOCIDADE, LIMITE_VELOCIDADE)
+                    VALUES
+                    (@NOME, @PLACA, @RASTREADOR, @DATA, @VELOCIDADE, @LIMITE)";
 
-      }catch (Exception e){
-       
-       throw e;
+        cmd.Parameters.AddWithValue("@NOME", t.Nome);
+        cmd.Parameters.AddWithValue("@PLACA", t.Placa);
+        cmd.Parameters.AddWithValue("@RASTREADOR", t.numRastreador);
+        cmd.Parameters.AddWithValue("@DATA", t.Data.ToString ("yyyy-MM-dd"));
+        cmd.Parameters.AddWithValue("@VELOCIDADE", t.Velocidade);
+        cmd.Parameters.AddWithValue("@LIMITE", t.Limitevelocidade);
 
-      }finally 
+        cmd.ExecuteNonQuery();
+      }
+      catch (Exception e)
       {
-        DataBase.Conexao.Close();
+        throw new Exception("Erro ao inserir infração: " + e.Message, e);
+      }
+      finally
+      {
+        conn.Close();
       }
     }
-
     public List<Infracao> List()
     {
       throw new NotImplementedException();

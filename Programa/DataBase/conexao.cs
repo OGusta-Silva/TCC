@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,19 +29,26 @@ namespace WpfApp1.DataBase
         throw;
       }
     }
-
-    public static void Close()
+    public MySqlCommand Query()
     {
-      if (connection.State == System.Data.ConnectionState.Open)
-        connection.Close();
+      try
+      {
+        if (connection.State != ConnectionState.Open)
+          connection.Open();
+
+        MySqlCommand cmd = connection.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        return cmd;
+      }
+      catch (Exception)
+      {
+        throw;
+      }
     }
-
-    internal static MySqlCommand Query()
+    public void Close()
     {
-      if (connection.State != System.Data.ConnectionState.Open)
-        connection.Open();
-
-      return connection.CreateCommand();
+      if (connection.State == ConnectionState.Open)
+        connection.Close();
     }
   }
 }

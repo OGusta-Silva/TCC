@@ -1,58 +1,92 @@
 ﻿<Window x:Class="WpfApp1.Home"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d"
-        Title="Home" Height="500" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Cadastro de Infração"
+        WindowState="Maximized"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="White">
 
 
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
-            <Menu>
-                <MenuItem  Header="Inicio" Height="17" FontSize="12">
-                    <MenuItem Header="Listar Cadastro" Height="17" FontSize="12"/>
-                    <MenuItem Header="Sobre" Height="17" FontSize="12"/>
-                    <Separator/>
-                    <MenuItem Header="Sair" Height="17" FontSize="12" Click="MnuSair_Click"/>
-                </MenuItem>
+    <DockPanel LastChildFill="True">
 
-            </Menu>
-            <TextBlock Text="Cadastro Infração" FontSize="17" Background="White" FlowDirection="RightToLeft" Foreground="Black" Padding="10" Height="33" AutomationProperties.IsOffscreenBehavior="Offscreen" TextAlignment="Center" TextWrapping="Wrap" Width="153" HorizontalAlignment="Left"/>
+        <!-- Menu Superior -->
+        <Menu DockPanel.Dock="Top" Background="{DynamicResource PrimaryHueMidBrush}" Foreground="White">
+            <MenuItem Header="Início">
+                <MenuItem Header="Listar Cadastro"/>
+                <MenuItem Header="Sobre"/>
+                <Separator/>
+                <MenuItem Header="Sair" Click="MnuSair_Click"/>
+            </MenuItem>
+        </Menu>
 
-        </StackPanel>
+        <!-- Conteúdo -->
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
+            <!-- Título -->
+            <TextBlock Text="Cadastro de Infração"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"
+                       Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                       Grid.Row="0"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="5 5">
-            <Label Grid.Column="0" Content="Nome" HorizontalAlignment="Right" Margin="0 7 0 0"/>
-            <Label Grid.Column="0" Content="Placa" HorizontalAlignment="Right" Margin="0 7 0 0"/>
-            <Label Grid.Column="0" Content="Número Rastreador" HorizontalAlignment="Right" Margin="0 7 0 0"/>
-            <Label Grid.Column="0" Content="Data" HorizontalAlignment="Right" Margin="0 7 0 0"/>
-            <Label Grid.Column="0" Content="Velocidade" HorizontalAlignment="Right" Margin="0 7 0 0"/>
-            <Label Grid.Column="0" Content="Limite Velocidade" HorizontalAlignment="Right" Margin="0 7 0 0"/>
+            <!-- Formulário -->
+            <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500">
 
-        </StackPanel>
+                <!-- Nome -->
+                <TextBox x:Name="txtBoxNome"
+                         Margin="0,5"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         materialDesign:HintAssist.Hint="Nome do Condutor"/>
 
-        <StackPanel Grid.Row="2" Grid.Column="1" Margin =" 2 5 2 5" >
-            <TextBox x:Name="txtBoxNome" Height="25" Margin="0 5 0 0" Foreground="Black" SelectionTextBrush="Black"/>
-            <TextBox x:Name="txtBoxPlaca" Height="25" Margin="0 5 0 0"/>
-            <TextBox x:Name="txtBoxnumero" Height="25" Margin="0 5 0 0"/>
-            <TextBox x:Name="txtBoxData" Height="25" Margin="0 5 0 0"/>
-            <TextBox x:Name="txtBoxVelocidade" Height="25" Margin="0 5 0 0"/>
-            <TextBox x:Name="txtBoxLimiteVelocidade" Height="25" Margin="0 5 0 0"/>
-            <Button x:Name="BtnSalvar" Foreground="White" Background="#FF1F5C91" BorderBrush="White" Content="Salvar" Margin="5" Click="BtnSalvar_Click"/>
-          
-        </StackPanel>
+                <!-- Placa -->
+                <TextBox x:Name="txtBoxPlaca"
+                         Margin="0,5"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         materialDesign:HintAssist.Hint="Placa"/>
 
+                <!-- Número do Rastreador -->
+                <TextBox x:Name="txtBoxnumero"
+                         Margin="0,5"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         materialDesign:HintAssist.Hint="Número do Rastreador"/>
 
-    </Grid>
+                <!-- Data -->
+                <DatePicker x:Name="dtPickerDataNascimento"
+                            Margin="0,5"
+                            Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+                            materialDesign:HintAssist.Hint="Data da Infração"/>
+
+                <!-- Velocidade -->
+                <TextBox x:Name="txtBoxVelocidade"
+                         Margin="0,5"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         materialDesign:HintAssist.Hint="Velocidade (km/h)"/>
+
+                <!-- Limite Velocidade -->
+                <TextBox x:Name="txtBoxLimiteVelocidade"
+                         Margin="0,5"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         materialDesign:HintAssist.Hint="Limite de Velocidade (km/h)"/>
+
+                <!-- Botão -->
+                <Button x:Name="BtnSalvar"
+                        Content="Salvar"
+                        Margin="0,20,0,0"
+                        Height="40"
+                        Style="{StaticResource MaterialDesignContainedButton}"
+                        Background="{DynamicResource PrimaryHueMidBrush}"
+                        Foreground="White"
+                        Click="BtnSalvar_Click"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
 </Window>
