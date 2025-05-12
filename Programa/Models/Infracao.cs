@@ -10,15 +10,23 @@ namespace WpfApp1.Models
     {
     /*
      * vamos receber esses dados
+     * ID_INFRACAO  
      * NOME_MOTORISTA
      * PLACA_VEICULO
      * NUMERO_RASTREADOR
-     * NUMERO_RASTREADOR
-     * DATA
+     * * DATA
      * VELOCIDADE
      * LIMITE_VELOCIDADE
      */
 
+
+    public int Id { get; set; }
+    public string? Nome { get; set; }
+    public string? Placa { get; set; }
+    public int numRastreador{ get; set; }
+    public DateTime Data{ get; set; }
+    public int Velocidade { get; set; }
+    public int Limitevelocidade { get; set; }
 
   }
 }
