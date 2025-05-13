@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,53 +12,71 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Lógica interna para Home.xaml
-    /// </summary>
-    public partial class Home : Window
+  /// <summary>
+  /// Lógica interna para Home.xaml
+  /// </summary>
+  public partial class Home : Window
+  {
+    public Home()
     {
-        public Home()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
+    }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-         
-        }
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
 
     private void BtnSalvar_Click(object sender, RoutedEventArgs e)
     {
-      String nome, placa, numeroRastreador, data, velocidade, limiteVelocidade;
-      nome = txtBoxNome.Text;
-      placa = txtBoxPlaca.Text;
-      numeroRastreador = txtBoxnumero.Text;
-      data = txtBoxData.Text;
-      velocidade = txtBoxVelocidade.Text;
-      limiteVelocidade = txtBoxLimiteVelocidade.Text;
+      try
+      {
+        Infracao infracao = new Infracao
+        {
+          Nome = txtBoxNome.Text,
+          Placa = txtBoxPlaca.Text,
+          numRastreador = Convert.ToInt16(tBoxnumero.Text),
+          Data = DateTime.Parse(txtBoxData.Text),
+          Velocidade = Convert.ToInt16(txtBoxVelocidade.Text),
+          LimiteVelocidade = Convert.ToDouble(txtBoxLimiteVelocidade.Text)
+        };
 
-      MessageBox.Show("Cadastro Realizado!");
+        // Aqui você pode chamar um método para salvar no banco, por exemplo: infracaoDAO.Salvar(infracao);
 
-      txtBoxNome.Text ="";
-      txtBoxPlaca.Text = "";
-      txtBoxnumero.Text = "";
-      txtBoxData.Text = "";
-      txtBoxVelocidade.Text = "";
-      txtBoxLimiteVelocidade.Text = "";
+        MessageBox.Show("Cadastro Realizado!");
 
+        // Limpa os campos
+        txtBoxNome.Text = "";
+        txtBoxPlaca.Text = "";
+        tBoxnumero.Text = "";
+        txtBoxData.Text = "";
+        txtBoxVelocidade.Text = "";
+        txtBoxLimiteVelocidade.Text = "";
 
+        InfracaoDAO infracaoDAO = new InfracaoDAO(); 
+        infracaoDAO.Isert(infracao);
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("Erro ao salvar a infração: " + ex.Message);
+      }
     }
 
     private void MnuSair_Click(object sender, RoutedEventArgs e)
     {
-      MessageBoxResult result = MessageBox.Show("Deseja realmente sair da aplicação?", "Sistema de Cadastro Infração",MessageBoxButton.YesNo, MessageBoxImage.Question);
+      MessageBoxResult result = MessageBox.Show("Deseja realmente sair da aplicação?", "Sistema de Cadastro Infração", MessageBoxButton.YesNo, MessageBoxImage.Question);
       if (result == MessageBoxResult.Yes) {
-      this.Close();
-         
-      }        
+        this.Close();
+
       }
-  }
+    }
+
+
+  } 
+
+
 }

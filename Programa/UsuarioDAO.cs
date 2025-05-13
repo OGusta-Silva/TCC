@@ -11,6 +11,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Runtime.Intrinsics.X86;
 using System.Text.Unicode;
 using System.Windows.Markup;
+using WpfApp1.DataBase;
 
 namespace WpfApp1
 {
@@ -18,9 +19,11 @@ namespace WpfApp1
   {
     public Usuario? GetByUsuario(string usuarioNome, string senha)
     {
+      Conexao conexao = new Conexao(); // instancia
+
       try
       {
-        MySqlCommand query = DataBase.Conexao.Query();
+        MySqlCommand query = conexao.Query();
         query.CommandText = "SELECT * FROM USUARIO WHERE LOGIN = @LOGIN AND SENHA = @SENHA";
         query.Parameters.AddWithValue("@LOGIN", usuarioNome);
         query.Parameters.AddWithValue("@SENHA", senha);
@@ -50,7 +53,7 @@ namespace WpfApp1
       }
       finally
       {
-        DataBase.Conexao.Close();
+        conexao.Close(); // fecha corretamente
       }
     }
   }

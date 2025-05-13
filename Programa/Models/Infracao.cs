@@ -8,16 +8,18 @@ namespace WpfApp1.Models
 {
     class Infracao
     {
+    internal double LimiteVelocidade;
+
     /*
-     * vamos receber esses dados
-     * ID_INFRACAO  
-     * NOME_MOTORISTA
-     * PLACA_VEICULO
-     * NUMERO_RASTREADOR
-     * * DATA
-     * VELOCIDADE
-     * LIMITE_VELOCIDADE
-     */
+* vamos receber esses dados
+* ID_INFRACAO  
+* NOME_MOTORISTA
+* PLACA_VEICULO
+* NUMERO_RASTREADOR
+* * DATA
+* VELOCIDADE
+* LIMITE_VELOCIDADE
+*/
 
 
     public int Id { get; set; }
