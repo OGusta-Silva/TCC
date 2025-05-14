@@ -33,16 +33,16 @@ namespace WpfApp1
 
     private void BtnSalvar_Click(object sender, RoutedEventArgs e)
     {
-      try
+       try
       {
         Infracao infracao = new Infracao
         {
           Nome = txtBoxNome.Text,
           Placa = txtBoxPlaca.Text,
-          numRastreador = Convert.ToInt16(tBoxnumero.Text),
+          numRastreador = (int)Convert.ToDouble(tBoxnumero.Text),
           Data = DateTime.Parse(txtBoxData.Text),
-          Velocidade = Convert.ToInt16(txtBoxVelocidade.Text),
-          LimiteVelocidade = Convert.ToDouble(txtBoxLimiteVelocidade.Text)
+          Velocidade = (int)Convert.ToDouble(txtBoxVelocidade.Text),
+          Limitevelocidade = (int)Convert.ToDouble(txtBoxLimiteVelocidade.Text)
         };
 
         // Aqui você pode chamar um método para salvar no banco, por exemplo: infracaoDAO.Salvar(infracao);

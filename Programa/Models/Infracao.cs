@@ -8,7 +8,7 @@ namespace WpfApp1.Models
 {
     class Infracao
     {
-    internal double LimiteVelocidade;
+
 
     /*
 * vamos receber esses dados
