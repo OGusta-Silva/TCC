@@ -57,12 +57,23 @@ namespace WpfApp1.Models
       }
       finally
       {
-        conn.Close();
+        conn?.Close();
       }
     }
     public List<Infracao> List()
     {
-      throw new NotImplementedException();
+      try
+      {
+        List<Infracao > list = new List<Infracao>();
+        var query = conn.Query();
+        query.CommandText = "SELECT * FROM INFRACAO";
+
+        return list;
+      }
+      catch (Exception e) { 
+      
+      }  
+
     }
 
     public void Update(Infracao t)

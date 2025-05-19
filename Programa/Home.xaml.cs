@@ -65,9 +65,13 @@ namespace WpfApp1
         MessageBox.Show("Erro ao salvar a infração: " + ex.Message);
       }
     }
-
+    private void MnuList_Click(object sender, EventArgs e)
+    {
+      MainFrame.Navigate(new PInfracaoList());
+    }
     private void MnuSair_Click(object sender, RoutedEventArgs e)
     {
+
       MessageBoxResult result = MessageBox.Show("Deseja realmente sair da aplicação?", "Sistema de Cadastro Infração", MessageBoxButton.YesNo, MessageBoxImage.Question);
       if (result == MessageBoxResult.Yes) {
         this.Close();
