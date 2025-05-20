@@ -10,19 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApp1
 {
   /// <summary>
-  /// Interação lógica para PInfracaoList.xam
+  /// Lógica interna para PHome.xaml
   /// </summary>
-  public partial class PInfracaoList : Page
+  public partial class PHome : Window
   {
-    public PInfracaoList()
+    public PHome()
     {
-      InitializeComponent(); // esse método já é gerado pelo XAML
+      InitializeComponent();
     }
   }
 }

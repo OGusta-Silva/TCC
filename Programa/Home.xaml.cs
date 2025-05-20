@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.Models;
 
@@ -24,13 +25,14 @@ namespace WpfApp1
     public Home()
     {
       InitializeComponent();
+      MainFrame.Navigate(new Home()); // Página padrão ao entrar
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
 
     }
-
+    //botao de salvar informacoes
     private void BtnSalvar_Click(object sender, RoutedEventArgs e)
     {
        try
@@ -65,18 +67,18 @@ namespace WpfApp1
         MessageBox.Show("Erro ao salvar a infração: " + ex.Message);
       }
     }
+    //botao do menu que navega entre as paginas
     private void MnuList_Click(object sender, EventArgs e)
     {
       MainFrame.Navigate(new PInfracaoList());
+
     }
     private void MnuSair_Click(object sender, RoutedEventArgs e)
     {
+      if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButton.YesNo) == MessageBoxResult.Yes) { 
+        Application.Current.Shutdown();
 
-      MessageBoxResult result = MessageBox.Show("Deseja realmente sair da aplicação?", "Sistema de Cadastro Infração", MessageBoxButton.YesNo, MessageBoxImage.Question);
-      if (result == MessageBoxResult.Yes) {
-        this.Close();
-
-      }
+    }
     }
 
 
