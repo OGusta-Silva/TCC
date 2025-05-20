@@ -68,9 +68,15 @@ namespace WpfApp1
       }
     }
     //botao do menu que navega entre as paginas
-    private void MnuList_Click(object sender, EventArgs e)
+    private void abrirlistagem_Click(object sender, RoutedEventArgs e)
     {
-      MainFrame.Navigate(new PInfracaoList());
+     Button button = new Button();
+      switch (button.Name)
+      {
+        case "abrirlistagem_Click":
+         var window = new InfracaoListWindow();
+          break;
+      }
 
     }
     private void MnuSair_Click(object sender, RoutedEventArgs e)

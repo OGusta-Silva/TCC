@@ -18,8 +18,6 @@
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
             <Menu>
                 <MenuItem Header="Inicio" Height="17" FontSize="12">
-                    <MenuItem Header="Listar Cadastro" Height="17" FontSize="12" Click="MnuList_Click"/>
-                    <MenuItem Header="Sobre" Height="17" FontSize="12"/>
                     <Separator/>
                     <MenuItem Header="Sair" Height="17" FontSize="12" Click="MnuSair_Click"/>
                 </MenuItem>

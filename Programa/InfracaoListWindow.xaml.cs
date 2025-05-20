@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
   /// <summary>
-  /// Lógica interna para PHome.xaml
+  /// Lógica interna para InfracaoListWindow.xaml
   /// </summary>
-  public partial class PHome : Window
+  public partial class InfracaoListWindow : Window
   {
-    public PHome()
+    public InfracaoListWindow()
     {
       InitializeComponent();
     }
