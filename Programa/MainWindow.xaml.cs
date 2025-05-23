@@ -21,6 +21,8 @@ public partial class MainWindow : Window
   {
     InitializeComponent();
 
+    
+
     Loaded += MainWindow_Loaded;
 
     txtusuario.Focus();
