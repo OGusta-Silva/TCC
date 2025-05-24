@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WpfApp1.Interface;
+﻿using MySql.Data.MySqlClient;
 using WpfApp1.DataBase;
-using MySql.Data.MySqlClient;
+using WpfApp1.Interface;
 
 
 
 namespace WpfApp1.Models
 
 {
-  
+
   class InfracaoDAO : IDAO<Infracao>
   {
     private static Conexao? conn;
-    
-    public InfracaoDAO() { 
-    conn = new Conexao();
+
+    public InfracaoDAO()
+    {
+      conn = new Conexao();
     }
-   
+
     public void Delete(Infracao t)
     {
       throw new NotImplementedException();
@@ -45,7 +41,7 @@ namespace WpfApp1.Models
         cmd.Parameters.AddWithValue("@NOME", t.Nome);
         cmd.Parameters.AddWithValue("@PLACA", t.Placa);
         cmd.Parameters.AddWithValue("@RASTREADOR", t.numRastreador);
-        cmd.Parameters.AddWithValue("@DATA", t.Data.ToString ("yyyy-MM-dd"));
+        cmd.Parameters.AddWithValue("@DATA", t.Data.ToString("yyyy-MM-dd"));
         cmd.Parameters.AddWithValue("@VELOCIDADE", t.Velocidade);
         cmd.Parameters.AddWithValue("@LIMITE", t.Limitevelocidade);
 
@@ -64,15 +60,16 @@ namespace WpfApp1.Models
     {
       try
       {
-        List<Infracao > list = new List<Infracao>();
+        List<Infracao> list = new List<Infracao>();
         var query = conn.Query();
         query.CommandText = "SELECT * FROM INFRACAO";
 
         return list;
       }
-      catch (Exception e) { 
-      
-      }  
+      catch (Exception e)
+      {
+
+      }
 
     }
 

@@ -1,16 +1,5 @@
 ﻿
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Tls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Runtime.Intrinsics.X86;
-using System.Text.Unicode;
-using System.Windows.Markup;
 using WpfApp1.DataBase;
 
 namespace WpfApp1

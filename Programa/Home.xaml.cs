@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WpfApp1.Models;
 
 namespace WpfApp1
@@ -25,7 +12,7 @@ namespace WpfApp1
     public Home()
     {
       InitializeComponent();
-      MainFrame.Navigate(new Home()); // Página padrão ao entrar
+  
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,7 +22,7 @@ namespace WpfApp1
     //botao de salvar informacoes
     private void BtnSalvar_Click(object sender, RoutedEventArgs e)
     {
-       try
+      try
       {
         Infracao infracao = new Infracao
         {
@@ -59,7 +46,7 @@ namespace WpfApp1
         txtBoxVelocidade.Text = "";
         txtBoxLimiteVelocidade.Text = "";
 
-        InfracaoDAO infracaoDAO = new InfracaoDAO(); 
+        InfracaoDAO infracaoDAO = new InfracaoDAO();
         infracaoDAO.Isert(infracao);
       }
       catch (Exception ex)
@@ -70,25 +57,26 @@ namespace WpfApp1
     //botao do menu que navega entre as paginas
     private void abrirlistagem_Click(object sender, RoutedEventArgs e)
     {
-     Button button = new Button();
+      Button button = new Button();
       switch (button.Name)
       {
         case "abrirlistagem_Click":
-         var window = new InfracaoListWindow();
+          var window = new InfracaoListWindow();
           break;
       }
 
     }
     private void MnuSair_Click(object sender, RoutedEventArgs e)
     {
-      if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButton.YesNo) == MessageBoxResult.Yes) { 
+      if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+      {
         Application.Current.Shutdown();
 
-    }
+      }
     }
 
 
-  } 
+  }
 
 
 }
