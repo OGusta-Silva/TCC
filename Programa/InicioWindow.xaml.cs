@@ -12,7 +12,7 @@ namespace WpfApp1
 
     {
       InitializeComponent();
- 
+
       MessageBox.Show("Tela de incio");
 
     }

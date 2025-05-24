@@ -12,7 +12,7 @@ namespace WpfApp1
     public Home()
     {
       InitializeComponent();
-  
+
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,13 +57,9 @@ namespace WpfApp1
     //botao do menu que navega entre as paginas
     private void abrirlistagem_Click(object sender, RoutedEventArgs e)
     {
-      Button button = new Button();
-      switch (button.Name)
-      {
-        case "abrirlistagem_Click":
-          var window = new InfracaoListWindow();
-          break;
-      }
+      var infra = new InfracaoListWindow();
+      infra.Show();
+      this.Close();
 
     }
     private void MnuSair_Click(object sender, RoutedEventArgs e)
@@ -75,7 +71,10 @@ namespace WpfApp1
       }
     }
 
+    private void MenuItem_Click(object sender, RoutedEventArgs e)
+    {
 
+    }
   }
 
 

@@ -58,18 +58,7 @@ namespace WpfApp1.Models
     }
     public List<Infracao> List()
     {
-      try
-      {
-        List<Infracao> list = new List<Infracao>();
-        var query = conn.Query();
-        query.CommandText = "SELECT * FROM INFRACAO";
-
-        return list;
-      }
-      catch (Exception e)
-      {
-
-      }
+      throw new NotImplementedException();
 
     }
 
