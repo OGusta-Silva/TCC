@@ -3,7 +3,6 @@ using WpfApp1.DataBase;
 using WpfApp1.Interface;
 
 
-
 namespace WpfApp1.Models
 
 {
@@ -58,8 +57,34 @@ namespace WpfApp1.Models
     }
     public List<Infracao> List()
     {
-      throw new NotImplementedException();
+      try
+      {
+        List<Infracao> list = new List<Infracao>();
 
+        var query = conn.Query();
+        query.CommandText = "SELECT * FROM INFRACAO";
+        
+        //reader vai ler o quue retornoar do selec
+        MySqlDataReader reader = query.ExecuteReader();
+        while (reader.Read())
+        {
+          list.Add(new Infracao() { }); 
+          IDAO = reader.GetInt32(ID)
+
+
+          
+          
+
+        }
+
+      }
+      catch (Exception e) {
+        throw e;
+      }
+      finally{
+
+        conn.Close();
+      }
     }
 
     public void Update(Infracao t)
