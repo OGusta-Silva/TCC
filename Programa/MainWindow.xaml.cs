@@ -30,8 +30,8 @@ public partial class MainWindow : Window
 
     if (Usuario.Login(usuario, senha))
     {
-      var home = new Home();
-      home.Show();
+      var iniciowindow = new InicioWindow();
+      iniciowindow.Show();
       this.Close();
     }
     else

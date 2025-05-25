@@ -13,14 +13,31 @@ namespace WpfApp1
     {
       InitializeComponent();
 
-      MessageBox.Show("Tela de incio");
-
+  
     }
 
+    private void Cadastro_Click(object sender, RoutedEventArgs e)
+    {
+      var home = new Home();
+      home.Show();
+      this.Close();
+        }
 
+    private void Sair_Click(object sender, RoutedEventArgs e)
+    {
+      if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+      {
+        Application.Current.Shutdown();
 
+      }
+    }
 
-
+    private void Listar_Click(object sender, RoutedEventArgs e)
+    {
+      var Infralist = new InfracaoListWindow();
+      Infralist.Show();
+      this.Close();
+    }
   }
 
 }

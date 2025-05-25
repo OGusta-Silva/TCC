@@ -1,17 +1,68 @@
 ﻿<Window x:Class="WpfApp1.InicioWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d"
-        Title="InicioWindow" Height="450" Width="800">
-    <DockPanel>
-        <StackPanel DockPanel.Dock="left">
-            <Image Source="/IMAGEM/logo.png" Height="59" Width="93"/>
+        Title="Painel Inicial"
+        Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Menu lateral -->
+            <ColumnDefinition Width="*"/>
+            <!-- Área de conteúdo -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Menu Lateral -->
+        <StackPanel Grid.Column="0" Background="#2c3e50" VerticalAlignment="Stretch">
+            <TextBlock Text="MENU"
+                       Foreground="White"
+                       FontSize="20"
+                       Margin="10"
+                       HorizontalAlignment="Center"/>
+
+            <Button Content="Cadastro" Margin="10" Click="Cadastro_Click"/>
+            <Button Content="Listar Cadastros" Margin="10" Click="Listar_Click"/>
+            <Button Content="Sair" Margin="10" Click="Sair_Click"/>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Top">
-            <TextBlock>Topo</TextBlock>
-        </StackPanel>
-    </DockPanel>
+
+        <!-- Conteúdo / Dashboard -->
+        <Grid Grid.Column="1" Background="#ecf0f1">
+            <TextBlock Text="Bem-vindo ao Sistema de Monitoramento"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0 0 0 20"
+                       />
+
+            <Grid Margin="0 40 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Cards de resumo -->
+                <Border Background="#3498db" CornerRadius="10" Padding="15" Margin="5,5,5,421">
+                    <StackPanel>
+                        <TextBlock Text="Infrações Hoje" Foreground="White" FontSize="16"/>
+                        <TextBlock Text="12" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#e67e22" CornerRadius="10" Padding="15" Margin="5,5,5,421" Grid.Column="1">
+                    <StackPanel>
+                        <TextBlock Text="Infrações no Mês" Foreground="White" FontSize="16"/>
+                        <TextBlock Text="87" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#2ecc71" CornerRadius="10" Padding="15" Margin="5,5,5,421" Grid.Column="2">
+                    <StackPanel>
+                        <TextBlock Text="Total de Veículos" Foreground="White" FontSize="16"/>
+                        <TextBlock Text="35" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
 </Window>
