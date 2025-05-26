@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using WpfApp1.Models;
 
 namespace WpfApp1
 {
@@ -10,6 +11,26 @@ namespace WpfApp1
     public InfracaoListWindow()
     {
       InitializeComponent();
+      Loaded += InfracaoListWindow_Loaded;
+    }
+
+    private void InfracaoListWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+      LoadDataGrid();
+    }
+
+    private void LoadDataGrid()
+    {
+      try
+      {
+        var dao = new InfracaoDAO();
+        dataGridInfracoes.ItemsSource = dao.List();
+      
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message, "ecxeção", MessageBoxButton.OK, MessageBoxImage.Error);
+      }
     }
   }
 }

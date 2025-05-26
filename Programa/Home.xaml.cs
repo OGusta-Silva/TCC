@@ -28,7 +28,7 @@ namespace WpfApp1
         {
           Nome = txtBoxNome.Text,
           Placa = txtBoxPlaca.Text,
-          numRastreador = (int)Convert.ToDouble(tBoxnumero.Text),
+          numRastreador = tBoxnumero.Text,
           Data = DateTime.Parse(txtBoxData.Text),
           Velocidade = (int)Convert.ToDouble(txtBoxVelocidade.Text),
           Limitevelocidade = (int)Convert.ToDouble(txtBoxLimiteVelocidade.Text)

@@ -16,10 +16,7 @@
 
         <!-- Menu e título -->
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
-            <Menu>
-                
-                <MenuItem Header="Voltar" Height="17" FontSize="12" Click="Mnuvoltarinicio_Click" />
-            </Menu>
+            
             <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
             <TextBlock Text="Cadastro Infração"
                    FontSize="17"
@@ -73,6 +70,10 @@
                 Margin="5,20,0,0"
                 HorizontalAlignment="Left"
                 Click="BtnSalvar_Click"/>
+            <Button x:Name="BrnSair"
+                    Content="Sair"
+                    Grid.Row="6" Grid.Column="1"
+                    Click="MnuSair_Click" Margin="494,20,5,0"/>
         </Grid>
     </Grid>
 

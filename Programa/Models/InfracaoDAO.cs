@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using WpfApp1.DataBase;
 using WpfApp1.Interface;
-
+using WpfApp1.Models;
 
 namespace WpfApp1.Models
 
@@ -68,22 +68,26 @@ namespace WpfApp1.Models
         MySqlDataReader reader = query.ExecuteReader();
         while (reader.Read())
         {
-          list.Add(new Infracao() { }); 
-          IDAO = reader.GetInt32(ID)
-
-
+          list.Add(new Infracao() { 
           
-          
+            Id = reader.GetInt32("ID_INFRACAO"),
+            Placa = reader.GetString("PLACA_VEICULO"),
+            numRastreador = reader.GetString("NUMERO_RASTREADOR"),
+            Velocidade = (int)reader.GetDouble("VELOCIDADE"),
+            Limitevelocidade = (int)reader.GetDouble("LIMITE_VELOCIDADE")
 
+          });
         }
+        return list;
 
       }
-      catch (Exception e) {
-        throw e;
+      catch (Exception){
+
+        throw;
       }
       finally{
 
-        conn.Close();
+        conn?.Close();
       }
     }
 
