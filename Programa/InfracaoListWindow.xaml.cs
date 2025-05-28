@@ -32,5 +32,12 @@ namespace WpfApp1
         MessageBox.Show(ex.Message, "ecxeção", MessageBoxButton.OK, MessageBoxImage.Error);
       }
     }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+      var inicio = new InicioWindow();
+      inicio.Show();
+      this.Close();
+    }
   }
 }

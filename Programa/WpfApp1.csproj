@@ -9,13 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MaterialDesignColors" Version="5.2.1" />
-    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
-    <PackageReference Include="MySql.Data" Version="9.2.0" />
+    <None Remove="Imagens\0.png" />
+    <None Remove="Imagens\icons8-voltar-48.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="IMAGEM\" />
+    <Content Include="Imagens\0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagens\icons8-voltar-48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="5.2.1" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+    <PackageReference Include="MySql.Data" Version="9.2.0" />
   </ItemGroup>
 
 </Project>

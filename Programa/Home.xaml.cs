@@ -76,6 +76,13 @@ namespace WpfApp1
     {
 
     }
+
+    private void Voltar_Click(object sender, RoutedEventArgs e)
+    {
+      var inicio = new InicioWindow();
+      inicio.Show();
+      this.Close();
+    }
   }
 
 

@@ -14,25 +14,27 @@
         </Grid.ColumnDefinitions>
 
         <!-- Menu Lateral -->
-        <StackPanel Grid.Column="0" Background="#2c3e50" VerticalAlignment="Stretch">
+        <StackPanel Grid.Column="0" Background="#FF00548C">
             <TextBlock Text="MENU"
-                       Foreground="White"
+                       Foreground="#FFE8E8E8"
                        FontSize="20"
-                       Margin="10"
-                       HorizontalAlignment="Center"/>
+                       Margin="20"
+                       HorizontalAlignment="Center" FontFamily="Segoe UI Black"/>
 
-            <Button Content="Cadastro" Margin="10" Click="Cadastro_Click"/>
-            <Button Content="Listar Cadastros" Margin="10" Click="Listar_Click"/>
-            <Button Content="Sair" Margin="10" Click="Sair_Click"/>
+            <Button Content="Cadastro" Margin="10" Click="Cadastro_Click" Background="#FF5692B9"/>
+            <Button Content="Listar Cadastros" Margin="10" Click="Listar_Click" Background="#FF5692B9"/>
+            <Button Content="Relatórios" Margin="10" Background="#FF5692B9"/>
+            <Button Content="Sair" Click="Sair_Click" Margin="10" Background="#FF868686" />
         </StackPanel>
 
         <!-- Conteúdo / Dashboard -->
         <Grid Grid.Column="1" Background="#ecf0f1">
-            <TextBlock Text="Bem-vindo ao Sistema de Monitoramento"
+            <TextBlock
+                       
                        FontSize="24"
                        FontWeight="Bold"
-                       Margin="0 0 0 20"
-                       />
+                       Margin="5 0 0 20" Background="White"
+                       ><Run Text="Bem-vindo ao "/><Run Language="pt-br" Text="InfraCad"/></TextBlock>
 
             <Grid Margin="0 40 0 0">
                 <Grid.ColumnDefinitions>
@@ -42,24 +44,24 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Cards de resumo -->
-                <Border Background="#3498db" CornerRadius="10" Padding="15" Margin="5,5,5,421">
+                <Border Background="#FF8C9CA9" CornerRadius="10" Padding="15" Margin="5,5,5,421">
                     <StackPanel>
-                        <TextBlock Text="Infrações Hoje" Foreground="White" FontSize="16"/>
-                        <TextBlock Text="12" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                        <TextBlock Text="Infrações Hoje" Foreground="#FF040404" FontSize="16"/>
+                        <TextBlock Text="12" Foreground="#FF040404" FontSize="24" FontWeight="Bold"/>
                     </StackPanel>
                 </Border>
 
-                <Border Background="#e67e22" CornerRadius="10" Padding="15" Margin="5,5,5,421" Grid.Column="1">
+                <Border Background="#FFACCFCB" CornerRadius="10" Padding="15" Margin="5,5,5,421" Grid.Column="1">
                     <StackPanel>
-                        <TextBlock Text="Infrações no Mês" Foreground="White" FontSize="16"/>
-                        <TextBlock Text="87" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                        <TextBlock Text="Infrações no Mês" Foreground="Black" FontSize="16"/>
+                        <TextBlock Text="87" Foreground="Black" FontSize="24" FontWeight="Bold"/>
                     </StackPanel>
                 </Border>
 
-                <Border Background="#2ecc71" CornerRadius="10" Padding="15" Margin="5,5,5,421" Grid.Column="2">
+                <Border Background="#FF5692B9" CornerRadius="10" Padding="15" Margin="5,5,5,421" Grid.Column="2">
                     <StackPanel>
-                        <TextBlock Text="Total de Veículos" Foreground="White" FontSize="16"/>
-                        <TextBlock Text="35" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                        <TextBlock Text="Total de Veículos" Foreground="Black" FontSize="16"/>
+                        <TextBlock Text="35" Foreground="Black" FontSize="24" FontWeight="Bold"/>
                     </StackPanel>
                 </Border>
             </Grid>
