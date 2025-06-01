@@ -14,13 +14,11 @@
         </Grid.ColumnDefinitions>
 
         <!-- Menu Lateral -->
-        <StackPanel Grid.Column="0" Background="#FF00548C">
-            <TextBlock Text="MENU"
-                       Foreground="#FFE8E8E8"
-                       FontSize="20"
-                       Margin="20"
-                       HorizontalAlignment="Center" FontFamily="Segoe UI Black"/>
-
+        <StackPanel Grid.Column="0" Background="White" Orientation="Vertical">
+            <Image Source="/Imagens/Logo.jpg"
+                   Width="200"
+                   Stretch="Uniform"
+                   Height="95" RenderTransformOrigin="0.51,0.517"/>
             <Button Content="Cadastro" Margin="10" Click="Cadastro_Click" Background="#FF5692B9"/>
             <Button Content="Listar Cadastros" Margin="10" Click="Listar_Click" Background="#FF5692B9"/>
             <Button Content="Relatórios" Margin="10" Background="#FF5692B9"/>
@@ -28,12 +26,12 @@
         </StackPanel>
 
         <!-- Conteúdo / Dashboard -->
-        <Grid Grid.Column="1" Background="#ecf0f1">
+        <Grid Grid.Column="1" Background="White">
             <TextBlock
                        
                        FontSize="24"
                        FontWeight="Bold"
-                       Margin="5 0 0 20" Background="White"
+                       Margin="5,0,0,0" Background="#FFE2E2E2"
                        ><Run Text="Bem-vindo ao "/><Run Language="pt-br" Text="InfraCad"/></TextBlock>
 
             <Grid Margin="0 40 0 0">
