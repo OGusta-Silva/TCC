@@ -71,7 +71,7 @@
             <TextBox x:Name="txtBoxNome" Grid.Row="0" Grid.Column="1" Height="25" Margin="5"/>
             <TextBox x:Name="txtBoxPlaca" Grid.Row="1" Grid.Column="1" Height="25" Margin="5"/>
             <TextBox x:Name="tBoxnumero" Grid.Row="2" Grid.Column="1" Height="25" Margin="5"/>
-            <TextBox x:Name="txtBoxData" Grid.Row="3" Grid.Column="1" Height="25" Margin="0,5,10,4"/>
+            <DatePicker x:Name="dtPickerData" Grid.Row="3" Grid.Column="1" Height="25" Margin="0,5,10,4"/>
             <TextBox x:Name="txtBoxVelocidade" Grid.Row="4" Grid.Column="1" Height="25" Margin="5"/>
             <TextBox x:Name="txtBoxLimiteVelocidade" Grid.Row="5" Grid.Column="1" Height="25" Margin="5"/>
 

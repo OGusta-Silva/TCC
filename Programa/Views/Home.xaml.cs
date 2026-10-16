@@ -25,12 +25,17 @@ namespace WpfApp1.Views
     {
       try
       {
-        Infracao infracao = new Infracao
+         if (dtPickerData.SelectedDate == null)
+          {
+            MessageBox.Show("Por favor, selecione uma data.");
+            return;
+          }
+                Infracao infracao = new Infracao
         {
           Nome = txtBoxNome.Text,
           Placa = txtBoxPlaca.Text,
           numRastreador = tBoxnumero.Text,
-          Data = DateTime.Parse(txtBoxData.Text),
+          Data = dtPickerData.SelectedDate.Value,
           Velocidade = (int)Convert.ToDouble(txtBoxVelocidade.Text),
           Limitevelocidade = (int)Convert.ToDouble(txtBoxLimiteVelocidade.Text)
         };
@@ -43,7 +48,7 @@ namespace WpfApp1.Views
         txtBoxNome.Text = "";
         txtBoxPlaca.Text = "";
         tBoxnumero.Text = "";
-        txtBoxData.Text = "";
+        dtPickerData.SelectedDate = null;
         txtBoxVelocidade.Text = "";
         txtBoxLimiteVelocidade.Text = "";
 
