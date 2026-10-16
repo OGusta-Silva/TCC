@@ -131,8 +131,9 @@ namespace WpfApp1.Data
       return List(null, null, 50);
     }
 
-    // Lista com filtro opcional por período (DataInicio/DataFim) e um limite de registros exibidos.
-    public List<Infracao> List(DateTime? dataInicio, DateTime? dataFim, int limite = 50)
+    // Lista com filtro opcional por período (DataInicio/DataFim) e um limite de registros.
+    // limite = null significa "sem limite" (usado pelo Relatório, que precisa trazer tudo do período).
+    public List<Infracao> List(DateTime? dataInicio, DateTime? dataFim, int? limite = 50)
     {
       try
       {
@@ -141,13 +142,15 @@ namespace WpfApp1.Data
         // LIMIT vai direto no texto (não como parâmetro): "limite" é sempre um valor
         // definido no código (nunca digitado pelo usuário), então não há risco de injection,
         // e evita um bug conhecido de alguns drivers MySQL com parâmetro dentro de LIMIT.
+        string limiteSql = limite.HasValue ? $"LIMIT {limite.Value}" : "";
+
         MySqlCommand cmd = conn.Query();
         cmd.CommandText = $@"
                     SELECT * FROM INFRACAO
                     WHERE (@DATA_INICIO IS NULL OR DATA >= @DATA_INICIO)
                       AND (@DATA_FIM IS NULL OR DATA <= @DATA_FIM)
                     ORDER BY DATA DESC
-                    LIMIT {limite}";
+                    {limiteSql}";
 
         cmd.Parameters.AddWithValue("@DATA_INICIO", (object?)dataInicio?.ToString("yyyy-MM-dd") ?? DBNull.Value);
         cmd.Parameters.AddWithValue("@DATA_FIM", (object?)dataFim?.ToString("yyyy-MM-dd") ?? DBNull.Value);

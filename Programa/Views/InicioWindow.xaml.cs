@@ -38,6 +38,13 @@ namespace WpfApp1.Views
       Infralist.Show();
       this.Close();
     }
+
+    private void Relatorios_Click(object sender, RoutedEventArgs e)
+    {
+      var relatorio = new Relatorio();
+      relatorio.Show();
+      this.Close();
+    }
   }
 
 }

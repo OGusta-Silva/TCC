@@ -21,7 +21,7 @@
                    Height="95" RenderTransformOrigin="0.51,0.517"/>
             <Button Content="Cadastro" Margin="10" Click="Cadastro_Click" Background="#FF5692B9"/>
             <Button Content="Listar Cadastros" Margin="10" Click="Listar_Click" Background="#FF5692B9"/>
-            <Button Content="Relatórios" Margin="10" Click="Listar_Click" Background="#FF5692B9"/>
+            <Button Content="Relatórios" Margin="10" Click="Relatorios_Click" Background="#FF5692B9"/>
             <Button Content="Sair" Click="Sair_Click" Margin="10" Background="#FF868686" />
         </StackPanel>
 

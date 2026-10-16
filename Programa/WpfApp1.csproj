@@ -26,6 +26,7 @@
     <PackageReference Include="MaterialDesignColors" Version="5.2.1" />
     <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
     <PackageReference Include="MySql.Data" Version="9.2.0" />
+    <PackageReference Include="QuestPDF" Version="2026.7.1" />
   </ItemGroup>
 
 </Project>
