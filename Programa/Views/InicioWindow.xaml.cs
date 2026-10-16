@@ -1,6 +1,6 @@
-﻿using System.Windows;
+using System.Windows;
 
-namespace WpfApp1
+namespace WpfApp1.Views
 {
   /// <summary>
   /// Lógica interna para InicioWindow.xaml

@@ -1,8 +1,9 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using WpfApp1.Models;
+using WpfApp1.Data;
 
-namespace WpfApp1
+namespace WpfApp1.Views
 {
   /// <summary>
   /// Lógica interna para Home.xaml

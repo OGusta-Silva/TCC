@@ -1,7 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace WpfApp1.DataBase
+namespace WpfApp1.Data
 {
   internal class Conexao
   {

@@ -1,10 +1,8 @@
-﻿using MySql.Data.MySqlClient;
-using WpfApp1.DataBase;
+using MySql.Data.MySqlClient;
 using WpfApp1.Interface;
 using WpfApp1.Models;
 
-namespace WpfApp1.Models
-
+namespace WpfApp1.Data
 {
 
   class InfracaoDAO : IDAO<Infracao>

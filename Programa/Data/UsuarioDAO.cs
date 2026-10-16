@@ -1,8 +1,8 @@
-﻿
-using MySql.Data.MySqlClient;
-using WpfApp1.DataBase;
 
-namespace WpfApp1
+using MySql.Data.MySqlClient;
+using WpfApp1.Models;
+
+namespace WpfApp1.Data
 {
   internal class UsuarioDAO : AbstracDAO<Usuario>
   {

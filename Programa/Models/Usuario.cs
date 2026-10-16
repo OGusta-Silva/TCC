@@ -1,4 +1,6 @@
-﻿namespace WpfApp1
+using WpfApp1.Data;
+
+namespace WpfApp1.Models
 {
 
   internal class Usuario

@@ -1,6 +1,4 @@
-﻿using WpfApp1.DataBase;
-
-namespace WpfApp1
+namespace WpfApp1.Data
 {
   internal abstract class AbstracDAO<T>
   {

@@ -1,5 +1,7 @@
-﻿using System.Windows;
-namespace WpfApp1;
+using System.Windows;
+using WpfApp1.Models;
+
+namespace WpfApp1.Views;
 
 
 /// <summary>
