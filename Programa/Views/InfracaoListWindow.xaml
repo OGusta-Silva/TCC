@@ -15,7 +15,7 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="74"/>
-            <RowDefinition Height="0"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -37,12 +37,24 @@
             </TextBlock>
         </StackPanel>
 
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,0,10,10" VerticalAlignment="Center">
+            <TextBlock Text="De:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <DatePicker x:Name="dtFiltroInicio" Width="130" Margin="0,0,15,0"/>
+            <TextBlock Text="Até:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <DatePicker x:Name="dtFiltroFim" Width="130" Margin="0,0,15,0"/>
+            <Button Content="Filtrar" Click="BtnFiltrar_Click" Width="80" Margin="0,0,5,0"/>
+            <Button Content="Limpar filtro" Click="BtnLimparFiltro_Click" Width="100"/>
+            <TextBlock x:Name="txtInfoLimite" VerticalAlignment="Center" Margin="30,0,0,0" FontStyle="Italic" Foreground="Gray"/>
+        </StackPanel>
+
         <DataGrid Grid.Row="2" Margin="5,0,5,5" x:Name="dataGridInfracoes" IsReadOnly="true"
                       AutoGenerateColumns="False" AlternatingRowBackground="#FFE5E5E5" AlternationCount="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
                 <DataGridTextColumn Header="Placa Veiculo" Binding="{Binding Placa}"/>
                 <DataGridTextColumn Header="Numero Rastreador" Binding="{Binding numRastreador}"/>
+                <DataGridTextColumn Header="Data" Binding="{Binding Data, StringFormat=dd/MM/yyyy}"/>
                 <DataGridTextColumn Header="Velocidade" Binding="{Binding Velocidade}"/>
                 <DataGridTextColumn Header="Limite Velocidade" Binding="{Binding Limitevelocidade}"/>
 
@@ -51,7 +63,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-
+                                <Button Content="Editar" Margin="2" Padding="8,2" Click="BtnEditar_Click"/>
+                                <Button Content="Excluir" Margin="2" Padding="8,2" Click="BtnExcluir_Click"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

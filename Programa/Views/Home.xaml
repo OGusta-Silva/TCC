@@ -33,7 +33,7 @@
                     <TextBlock><Run Text="Voltar"/></TextBlock>
                 </StackPanel>
             </Button>
-            <TextBlock Text="Cadastro Infração"
+            <TextBlock x:Name="txtTitulo" Text="Cadastro Infração"
                    FontSize="17"
                    Background="White"
                    Foreground="Black"

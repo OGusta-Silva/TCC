@@ -10,10 +10,31 @@ namespace WpfApp1.Views
   /// </summary>
   public partial class Home : Window
   {
+    // Quando null, a tela está em modo de novo cadastro.
+    // Quando preenchida, a tela está editando essa infração (veio da listagem).
+    private Infracao? _infracaoEmEdicao;
+
     public Home()
     {
       InitializeComponent();
+    }
 
+    // Construtor usado pela listagem para editar uma infração já existente.
+    public Home(Infracao infracaoParaEditar)
+    {
+      InitializeComponent();
+
+      _infracaoEmEdicao = infracaoParaEditar;
+
+      txtTitulo.Text = "Editar Infração";
+      BtnSalvar.Content = "Atualizar";
+
+      txtBoxNome.Text = infracaoParaEditar.Nome;
+      txtBoxPlaca.Text = infracaoParaEditar.Placa;
+      tBoxnumero.Text = infracaoParaEditar.numRastreador;
+      dtPickerData.SelectedDate = infracaoParaEditar.Data;
+      txtBoxVelocidade.Text = infracaoParaEditar.Velocidade.ToString();
+      txtBoxLimiteVelocidade.Text = infracaoParaEditar.Limitevelocidade.ToString();
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -25,13 +46,15 @@ namespace WpfApp1.Views
     {
       try
       {
-         if (dtPickerData.SelectedDate == null)
-          {
-            MessageBox.Show("Por favor, selecione uma data.");
-            return;
-          }
-                Infracao infracao = new Infracao
+        if (dtPickerData.SelectedDate == null)
         {
+          MessageBox.Show("Selecione a data da infração.");
+          return;
+        }
+
+        Infracao infracao = new Infracao
+        {
+          Id = _infracaoEmEdicao?.Id ?? 0,
           Nome = txtBoxNome.Text,
           Placa = txtBoxPlaca.Text,
           numRastreador = tBoxnumero.Text,
@@ -40,20 +63,30 @@ namespace WpfApp1.Views
           Limitevelocidade = (int)Convert.ToDouble(txtBoxLimiteVelocidade.Text)
         };
 
-        // Aqui você pode chamar um método para salvar no banco, por exemplo: infracaoDAO.Salvar(infracao);
+        InfracaoDAO infracaoDAO = new InfracaoDAO();
 
+        if (_infracaoEmEdicao != null)
+        {
+          infracaoDAO.Update(infracao);
+          MessageBox.Show("Infração atualizada!");
+
+          // Volta pra listagem já com o dado atualizado.
+          var lista = new InfracaoListWindow();
+          lista.Show();
+          this.Close();
+          return;
+        }
+
+        infracaoDAO.Isert(infracao);
         MessageBox.Show("Cadastro Realizado!");
 
-        // Limpa os campos
+        // Limpa os campos pra permitir cadastrar outra infração.
         txtBoxNome.Text = "";
         txtBoxPlaca.Text = "";
         tBoxnumero.Text = "";
         dtPickerData.SelectedDate = null;
         txtBoxVelocidade.Text = "";
         txtBoxLimiteVelocidade.Text = "";
-
-        InfracaoDAO infracaoDAO = new InfracaoDAO();
-        infracaoDAO.Isert(infracao);
       }
       catch (Exception ex)
       {
