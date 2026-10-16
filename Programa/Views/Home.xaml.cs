@@ -20,7 +20,7 @@ namespace WpfApp1.Views
     }
 
     // Construtor usado pela listagem para editar uma infração já existente.
-    public Home(Infracao infracaoParaEditar)
+    internal Home(Infracao infracaoParaEditar)
     {
       InitializeComponent();
 
