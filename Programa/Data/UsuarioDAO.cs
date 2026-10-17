@@ -38,7 +38,7 @@ namespace WpfApp1.Data
       }
       catch (Exception e)
       {
-        throw new Exception("Erro ao buscar o usuário: " + e.Message, e);
+            throw new Exception("Erro ao buscar o usuário: " + e.Message, e);
       }
       finally
       {
